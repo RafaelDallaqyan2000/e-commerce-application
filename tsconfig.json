@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "preserveValueImports": true,
+    "allowImportingTsExtensions": true,
+    "noImplicitOverride": true,
+    "moduleResolution": "node",
+  },
+  "include": [
+    "public/**/*",
+    "src/**/*",
+    "index.tsx"
+  ]
+}
