@@ -37,6 +37,7 @@ module.exports = {
     },
     plugins: PLUGINS,
     devServer: {
-        port: 3002
+        port: 3002,
+        historyApiFallback: true,
     }
 }
