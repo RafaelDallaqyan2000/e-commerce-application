@@ -1,1 +1,1 @@
-export {addToken, clearToken} from "./reducer.ts";
+export {editToken} from "./reducer.ts";

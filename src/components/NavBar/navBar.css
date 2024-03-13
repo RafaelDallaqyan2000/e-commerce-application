@@ -1,0 +1,111 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styles */
+nav {
+    background-color: #2980b9; /* Dark blue background */
+    color: #fff; /* White text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* Specify font family */
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu-icon {
+    display: none; /* Hide menu icon by default on larger screens */
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li a {
+    color: #bababa; /* White text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffffff; /* Orange text color on hover */
+}
+input[type="checkbox"] {
+    display: none;
+}
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block; /* Display menu icon on smaller screens */
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+        display: none; /* Hide checkbox input */
+    }
+
+    input[type="checkbox"]:checked ~ .nav-links {
+        display: flex; /* Display nav links when checkbox is checked */
+    }
+}
+
+.activeLink {
+    color: #FFF !important;
+    border-bottom: 2px solid #ffffff !important;
+}
+
+.logOutBtn {
+    background-color: #ff7c7c;
+    border: none;
+    font-weight: 800;
+    color: #000000;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.logOutBtn:hover {
+    background-color: #fa4646;
+}
+
+.logOutBtn:active {
+    background-color: #810000;
+}
