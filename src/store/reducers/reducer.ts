@@ -9,7 +9,7 @@ export interface SignInState {
     loading: boolean,
     error: string | boolean,
     isLogin: boolean,
-    userData: any
+    userData: any,
 }
 
 const initialState: SignInState = {
@@ -17,7 +17,7 @@ const initialState: SignInState = {
     loading: false,
     error: '',
     isLogin: false,
-    userData: {},
+    userData: {products: []},
 }
 
 export const slice = createSlice({

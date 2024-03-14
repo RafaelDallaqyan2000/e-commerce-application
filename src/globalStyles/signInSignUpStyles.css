@@ -23,6 +23,10 @@ body {
     margin-bottom: 20px;
 }
 
+.profileForm button{
+    width: 100%;
+}
+
 label {
     display: block;
     margin-bottom: 5px;

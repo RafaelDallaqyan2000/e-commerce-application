@@ -11,7 +11,7 @@ export type ItemType = {
     id: string;
     title: string;
     description: string;
-    imageUrl: string;
+    productImage: string;
     count: number;
     price: number;
 }

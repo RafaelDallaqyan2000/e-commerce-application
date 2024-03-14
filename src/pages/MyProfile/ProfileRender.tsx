@@ -36,7 +36,11 @@ export function ProfileRender({
                     onFocus={e => e.target.select()}
                     required
                 />
-                <form id="profileForm" onSubmit={handleSubmit}>
+                <form
+                    id="profileForm"
+                    className="profileForm"
+                    onSubmit={handleSubmit}
+                >
                     <label htmlFor="firstName">First Name:</label>
                     <input
                         type="text"
