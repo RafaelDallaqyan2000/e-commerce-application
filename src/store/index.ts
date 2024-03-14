@@ -1,2 +1,2 @@
 export {store} from './store.ts';
-export {editToken} from "./reducers";
+export {editToken, handleFormChange} from "./reducers";

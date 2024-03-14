@@ -10,20 +10,22 @@ type LoginType = {
 
 
 export const login = createAsyncThunk('getLoginUser',
-    ({email, password}: LoginType) : any => {
+    ({email, password}: LoginType): any => {
 
-    return axios.get(
-        `http://localhost:8080/users?email=${email}&password=${password}`
-    )
-        .then(res => {
-            if(res.data.length) {
-                store.dispatch(editToken({token: 'true'}))
-            } else {
-                alert('Not registered')
-            }
-            return res.data[0];
-        })
-        .catch(err => {
-            throw err
-        })
-})
+        return axios.get(
+            `http://localhost:8080/users?email=${email}&password=${password}`
+        )
+            .then(res => {
+                if (res.data.length) {
+                    store.dispatch(editToken({token: 'true'}));
+                    localStorage.setItem("userMail", email);
+                    localStorage.setItem("userPassword", password);
+                } else {
+                    alert('Not registered')
+                }
+                return res.data[0];
+            })
+            .catch(err => {
+                throw err
+            })
+    })

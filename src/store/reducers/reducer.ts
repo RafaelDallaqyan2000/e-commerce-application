@@ -1,21 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {login} from "./actions/login";
 import {registerUser} from "./actions/registerUser";
+import {getUserAllData} from "./actions/getUserAllData";
+import {editUserInfo} from "./actions/editUserInfo";
 
 export interface SignInState {
     token: boolean | string,
-    tableData: any,
     loading: boolean,
     error: string | boolean,
     isLogin: boolean,
+    userData: any
 }
 
 const initialState: SignInState = {
     token: '',
-    tableData: [{}],
     loading: false,
     error: '',
     isLogin: false,
+    userData: {},
 }
 
 export const slice = createSlice({
@@ -31,45 +33,52 @@ export const slice = createSlice({
             }
             window.location.reload();
         },
+        handleFormChange: (state, action: { payload: { key: string; value: any } }) => {
+            const {key, value} = action.payload;
+            state[key] = value;
+        }
     },
     extraReducers: (builder) => {
-        // builder.addCase(getTodosData.pending, (state) => {
-        //     state.loading = true;
-        // })
-        //
-        // builder.addCase(getTodosData.fulfilled, (state, action) => {
-        //     state.loading = false;
-        //     state.tableData = action.payload ?? [];
-        //     state.error = '';
-        // })
-        //
-        // builder.addCase(getTodosData.rejected, (state, action) => {
-        //     state.loading = false;
-        //     state.tableData = [];
-        //     state.error = action.error.message ?? '';
-        // })
 
 
-        builder.addCase(login.fulfilled, (state, action) => {
+        builder.addCase(login.fulfilled, (state:any) => {
             state.error = '';
         })
 
-        builder.addCase(login.rejected, (state, action) => {
+        builder.addCase(login.rejected, (state:any, action) => {
             state.loading = false;
             state.error = action.error.message ?? '';
         })
 
-        builder.addCase(registerUser.fulfilled, (state, action) => {
+        builder.addCase(registerUser.fulfilled, (state:any) => {
             state.error = '';
         })
 
-        builder.addCase(registerUser.rejected, (state, action) => {
-            state.loading = false;
+        builder.addCase(registerUser.rejected, (state:any, action) => {
+            state.error = action.error.message ?? '';
+        })
+
+        builder.addCase(getUserAllData.fulfilled, (state:any, action) => {
+            state.userData = action.payload;
+            state.error = '';
+        })
+
+        builder.addCase(getUserAllData.rejected, (state:any, action) => {
+            state.error = action.error.message ?? '';
+        })
+
+        builder.addCase(editUserInfo.fulfilled, (state:any, action) => {
+            console.log(action.payload, 'payload in redux')
+            // state.userData = action.payload;
+            state.error = '';
+        })
+
+        builder.addCase(editUserInfo.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
     }
 })
 
 
-export const {editToken} = slice.actions;
+export const {editToken, handleFormChange} = slice.actions;
 export default slice.reducer;

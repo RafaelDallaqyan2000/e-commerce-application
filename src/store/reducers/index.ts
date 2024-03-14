@@ -1,1 +1,1 @@
-export {editToken} from "./reducer.ts";
+export {editToken, handleFormChange} from "./reducer.ts";

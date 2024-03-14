@@ -4,3 +4,21 @@
     box-sizing: border-box;
     font-family: monospace;
 }
+
+button {
+    min-width: 200px;
+    padding: 10px;
+    border: none;
+    background-color: #0056b3;
+    color: #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 0.8;
+}

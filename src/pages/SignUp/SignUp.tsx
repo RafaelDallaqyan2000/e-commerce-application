@@ -28,11 +28,21 @@ export function SignUp() {
             <h2>Sign Up</h2>
             <form onSubmit={handleSignUpClick}>
                 <div className="formGroup">
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="firstName">FirstName</label>
                     <input
                         type="text"
-                        id="name"
-                        name="name"
+                        id="firstName"
+                        name="firstName"
+                        required
+                        onChange={handleChangeData}
+                    />
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="lastName">LastName</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
                         required
                         onChange={handleChangeData}
                     />
@@ -43,6 +53,16 @@ export function SignUp() {
                         type="email"
                         id="email"
                         name="email"
+                        required
+                        onChange={handleChangeData}
+                    />
+                </div>
+                <div className="formGroup">
+                    <label htmlFor="password">Phone Number</label>
+                    <input
+                        type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
                         required
                         onChange={handleChangeData}
                     />

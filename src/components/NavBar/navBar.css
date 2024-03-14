@@ -1,19 +1,17 @@
-/* Resetting default margin and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navbar styles */
 nav {
-    background-color: #2980b9; /* Dark blue background */
-    color: #fff; /* White text color */
+    background-color: #2980b9;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    font-family: 'Arial', sans-serif; /* Specify font family */
+    font-family: 'Arial', sans-serif;
 }
 
 .logo a {
@@ -24,7 +22,7 @@ nav {
 }
 
 .menu-icon {
-    display: none; /* Hide menu icon by default on larger screens */
+    display: none;
     cursor: pointer;
 }
 
@@ -42,22 +40,23 @@ nav {
 }
 
 .nav-links li a {
-    color: #bababa; /* White text color */
+    color: #bababa;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
 .nav-links li a:hover {
-    color: #ffffff; /* Orange text color on hover */
+    color: #ffffff;
 }
+
 input[type="checkbox"] {
     display: none;
 }
-/* Responsive styles */
+
 @media screen and (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide nav links by default on smaller screens */
+        display: none;
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -73,17 +72,17 @@ input[type="checkbox"] {
     }
 
     .menu-icon {
-        display: block; /* Display menu icon on smaller screens */
+        display: block;
         font-size: 1.5rem;
         cursor: pointer;
     }
 
     input[type="checkbox"] {
-        display: none; /* Hide checkbox input */
+        display: none;
     }
 
     input[type="checkbox"]:checked ~ .nav-links {
-        display: flex; /* Display nav links when checkbox is checked */
+        display: flex;
     }
 }
 
@@ -93,19 +92,16 @@ input[type="checkbox"] {
 }
 
 .logOutBtn {
-    background-color: #ff7c7c;
+    background-color: #b5e103;
     border: none;
     font-weight: 800;
     color: #000000;
     font-size: 16px;
     padding: 5px;
     cursor: pointer;
+    min-width: 0;
 }
 
 .logOutBtn:hover {
     background-color: #fa4646;
-}
-
-.logOutBtn:active {
-    background-color: #810000;
 }
