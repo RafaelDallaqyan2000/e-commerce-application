@@ -12,7 +12,7 @@ export function ProductList() {
             <div className="allProductsContainer">
                 {
                     productList.map(product => (
-                        <ProductItem productDetails={product}/>
+                        <ProductItem key={product.id} productDetails={product}/>
                     ))
                 }
             </div>

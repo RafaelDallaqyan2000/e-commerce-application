@@ -1,16 +1,23 @@
 import './productItemStyles.css';
 import React from "react";
 import {ItemType} from "../../models/models";
+import {useNavigate} from "react-router-dom";
 
 type ProductItemType = {
     productDetails: ItemType
 }
 
 export function ProductItem({productDetails}: ProductItemType) {
-    const {price, title, productImage} = productDetails;
+    const {price, title, productImage, id} = productDetails;
+
+    const navigate = useNavigate();
+
+    const handleProductClick = () => {
+        navigate(`/productDetails/${id}`);
+    }
 
     return (
-        <div className="product">
+        <div className="product" onClick={handleProductClick}>
             <div className="productImage">
                 <img
                     width={200}

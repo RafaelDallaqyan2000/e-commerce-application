@@ -40,7 +40,7 @@ export function ProjectRoutes({isLogin}) {
                 />
 
                 <Route
-                    path={"/productDetails"}
+                    path={"/productDetails/:id"}
                     element={<HeaderLayout Component={ProductDetails}/>}
                 />
 
