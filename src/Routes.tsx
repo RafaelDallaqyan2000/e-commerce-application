@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import {Route, Routes, useLocation} from "react-router-dom";
+import React from "react";
+import {Route, Routes} from "react-router-dom";
 import {
     AddNewProduct,
     HistoryOrders,
@@ -12,18 +12,8 @@ import {
 } from "./pages";
 import {Redirect} from "./Redirect";
 import {HeaderLayout} from "./layouts/HeaderLayout";
-import {useAppDispatch} from "./store/store";
-import {getUserAllData} from "./store/reducers/actions/getUserAllData";
 
 export function ProjectRoutes({isLogin}) {
-    const location = useLocation();
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        if(localStorage.getItem('token') === 'true') {
-            dispatch(getUserAllData())
-        }
-    }, [location.pathname]);
 
     return (
         isLogin ? (

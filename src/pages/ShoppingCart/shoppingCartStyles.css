@@ -1,6 +1,6 @@
-.allProductsContainer {
+.shoppingCartContainer {
     display: flex;
     flex-wrap: wrap;
+    margin: 30px;
     gap: 20px;
-    padding: 10px 30px
 }

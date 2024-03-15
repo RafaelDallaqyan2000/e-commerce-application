@@ -1,2 +1,12 @@
 export {store} from './store.ts';
-export {editToken, handleFormChange} from "./reducers";
+export {
+    editToken,
+    handleFormChange,
+    login,
+    registerUser,
+    getUserAllData,
+    getAllProducts,
+    editUserInfo,
+    deleteBasketProduct,
+    addInBasket
+} from "./reducers";

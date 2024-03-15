@@ -1,7 +1,7 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getUserAllData: any = createAsyncThunk('user/allData', (): any => {
+export const getUserAllData: any = createAsyncThunk('userData', (): any => {
     const email = localStorage.getItem('userMail');
     const password = localStorage.getItem('userPassword');
 

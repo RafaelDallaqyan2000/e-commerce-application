@@ -1,19 +1,27 @@
 import './productItemStyles.css';
 import React from "react";
-import {ItemType} from "../../models/models";
+import {ProductItemType} from "../../models/models";
 import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../store/store";
+import {addInBasket} from "../../store/reducers/actions/addInBasket";
 
 type ProductItemType = {
-    productDetails: ItemType
+    productDetails: ProductItemType
 }
 
 export function ProductItem({productDetails}: ProductItemType) {
     const {price, title, productImage, id} = productDetails;
 
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
     const handleProductClick = () => {
         navigate(`/productDetails/${id}`);
+    }
+
+    const handleClickAddToCart = (e) => {
+        e.stopPropagation();
+        dispatch(addInBasket(productDetails));
     }
 
     return (
@@ -32,8 +40,16 @@ export function ProductItem({productDetails}: ProductItemType) {
                 </div>
 
                 <div className="productDetailsStyle">
-                    Price: <span className="productPrice">{price}</span>
+                    Price: <span className="productPrice">${price}</span>
                 </div>
+            <div>
+                <button
+                    style={{width: "100%", margin: "10px 0"}}
+                    onClick={handleClickAddToCart}
+                >
+                    Add to cart
+                </button>
+            </div>
             </div>
         </div>
     )

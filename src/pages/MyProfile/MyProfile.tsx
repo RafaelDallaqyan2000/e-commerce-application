@@ -6,7 +6,7 @@ import {editUserInfo} from "../../store/reducers/actions/editUserInfo";
 
 export function MyProfile() {
     const defaultData = useSelector(state => state.userData);
-    const [userInfo, setUserInfo] = useState({});
+    const [userInfo, setUserInfo] = useState<any>();
     const dispatch = useAppDispatch();
 
     useEffect(() => {

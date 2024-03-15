@@ -1,0 +1,39 @@
+.detailsContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.pageTitle {
+    margin-top: 0;
+}
+
+.productImage {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.productDescription {
+    margin-bottom: 20px;
+}
+
+.productDescription > span, .productPrice > span, .productCount :nth-child(1) {
+    font-weight: 800;
+    color: #815709;
+    font-size: 16px;
+}
+
+.productPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #05b705;
+    margin-bottom: 10px;
+}
+
+.productCount {
+    font-size: 16px;
+    margin-bottom: 20px;
+}

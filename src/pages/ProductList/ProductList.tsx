@@ -1,18 +1,27 @@
 import "./productsStyle.css";
-import React from "react";
+import React, {useEffect} from "react";
 import {ProductItem} from "../../components";
 import {useSelector} from "react-redux";
+import {useAppDispatch} from "../../store/store";
+import {getAllProducts} from "../../store";
 
 export function ProductList() {
-    const productList = useSelector(state => state.userData.products);
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(getAllProducts());
+    }, []);
+
+    const productList = useSelector(state => state.allProducts);
 
     return (
         <div>
-            <h1 className="productsPageTitle">Products</h1>
+            <h1 className="pageTitle">Products</h1>
             <div className="allProductsContainer">
                 {
                     productList.map(product => (
-                        <ProductItem key={product.id} productDetails={product}/>
+                        <ProductItem key={product.id} productDetails={product} />
                     ))
                 }
             </div>
