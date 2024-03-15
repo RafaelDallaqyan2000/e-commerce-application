@@ -27,7 +27,6 @@ export const deleteBasketProduct = createAsyncThunk('basked/delete',
                 return filteredProduct;
             })
             .catch(err => {
-                console.log(err, 'err')
                 throw err;
             })
     })

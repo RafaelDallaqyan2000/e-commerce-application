@@ -2,19 +2,20 @@ import React, {useEffect, useState} from "react";
 import "./shoppingCartItemStyles.css";
 import {useAppDispatch} from "../../store/store";
 import {deleteBasketProduct} from "../../store";
+import {ProductItemType} from "../../models/models.ts";
 
-export function ShoppingCartItem({item}) {
+export function ShoppingCartItem({item}: {item: ProductItemType}) {
 
     if(!item) {
         return null
     }
 
-    const [productCount, setProductCount] = useState(0);
+    const [productCount, setProductCount] = useState(1);
     const [productPrice, setProductPrice] = useState(0);
 
     const dispatch = useAppDispatch();
 
-    const {count, description, price, productImage, title, id} = item;
+    const {count, price, productImage, title, id}: ProductItemType = item;
 
     useEffect(() => {
         setProductCount(count);

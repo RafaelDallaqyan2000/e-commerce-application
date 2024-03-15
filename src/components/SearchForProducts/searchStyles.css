@@ -1,0 +1,15 @@
+.searchBarContainer {
+    height: 100px;
+    padding: 30px;
+}
+
+.searchBarContainer h2 {
+    display: inline;
+}
+
+.searchBarContainer input {
+    padding: 15px 15px;
+    border: 2px solid royalblue;
+    border-radius: 5px;
+    width: 300px;
+}

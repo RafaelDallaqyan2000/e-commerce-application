@@ -14,6 +14,7 @@ export interface SignInState {
     isLogin: boolean,
     userData: any,
     allProducts: any[]
+    defaultProducts: any[]
 }
 
 const initialState: SignInState = {
@@ -22,7 +23,8 @@ const initialState: SignInState = {
     error: '',
     isLogin: false,
     userData: {},
-    allProducts: []
+    allProducts: [],
+    defaultProducts: []
 }
 
 export const slice = createSlice({
@@ -41,7 +43,7 @@ export const slice = createSlice({
         handleFormChange: (state, action: { payload: { key: string; value: any } }) => {
             const {key, value} = action.payload;
             state[key] = value;
-        }
+        },
     },
     extraReducers: (builder) => {
 
@@ -88,6 +90,7 @@ export const slice = createSlice({
 
         builder.addCase(getAllProducts.fulfilled, (state:any, action) => {
             state.allProducts = action.payload;
+            state.defaultProducts = action.payload;
             state.error = '';
         })
 

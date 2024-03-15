@@ -5,7 +5,7 @@ import {useSelector} from "react-redux";
 
 export function ShoppingCart() {
     const basketProducts = useSelector(state => state.userData.basket)
-    console.log(basketProducts)
+
     return (
         <>
             <h1 className="pageTitle">Shopping cart</h1>
