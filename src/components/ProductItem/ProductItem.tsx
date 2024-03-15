@@ -3,7 +3,7 @@ import React from "react";
 import {ProductItemType} from "../../models/models";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch} from "../../store/store";
-import {addInBasket} from "../../store/reducers/actions/addInBasket";
+import {addInBasket} from "../../store";
 
 type ProductItemType = {
     productDetails: ProductItemType

@@ -9,6 +9,9 @@ export function ShoppingCart() {
     return (
         <>
             <h1 className="pageTitle">Shopping cart</h1>
+            {
+                basketProducts?.length ? (
+
             <div className="shoppingCartContainer">
                 {
                     basketProducts?.map(e => (
@@ -16,6 +19,17 @@ export function ShoppingCart() {
                     ))
                 }
             </div>
+                ) : (
+                    <h2
+                        style={{
+                            textAlign: 'center',
+                            fontSize: "30px",
+                            color: "#9c3b5d"
+                    }}>
+                        This Page is Empty
+                    </h2>
+                )
+            }
         </>
     )
 }
