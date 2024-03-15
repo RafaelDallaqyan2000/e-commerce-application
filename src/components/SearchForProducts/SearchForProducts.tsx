@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {store, useAppDispatch} from "../../store/store.ts";
 import {useSelector} from "react-redux";
 import {all} from "axios";
-import {filterProductsFromSearch} from "../../helpers";
+import {searchProducts} from "../../helpers";
 import {handleFormChange} from "../../store";
 
 export function SearchForProducts() {
@@ -17,7 +17,7 @@ export function SearchForProducts() {
 
         dispatch(handleFormChange({
             key: "allProducts",
-            value: filterProductsFromSearch(defaultProducts, e.target.value)
+            value: searchProducts(defaultProducts, e.target.value)
         }))
         setInputValue(e.target.value);
 

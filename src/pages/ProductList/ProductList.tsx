@@ -1,6 +1,6 @@
 import "./productsStyle.css";
 import React, {useEffect} from "react";
-import {ProductItem, SearchForProducts} from "../../components";
+import {ProductItem, SearchForProducts, SortProducts} from "../../components";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store";
 import {getAllProducts} from "../../store";
@@ -18,7 +18,10 @@ export function ProductList() {
     return (
         <div>
             <h1 className="pageTitle">Products</h1>
-            <SearchForProducts />
+            <div className="findProductContainer">
+                <SearchForProducts />
+                <SortProducts />
+            </div>
             <div className="allProductsContainer">
                 {
                     productList.map(product => (

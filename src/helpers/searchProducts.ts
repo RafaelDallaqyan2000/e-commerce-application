@@ -1,4 +1,4 @@
-export function filterProductsFromSearch(
+export function searchProducts(
     array: any[],
     text: string,
 ): any[] {
