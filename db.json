@@ -8,17 +8,7 @@
       "password": "a",
       "phoneNumber": "+374999999",
       "imageUrl": "https://i0.wp.com/folkextreme.ru/wp-content/uploads/2014/04/jason-statham-interview-2.jpg",
-      "basket": [
-        {
-          "id": "222",
-          "title": "Banana",
-          "description": "This is banana from africa",
-          "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
-          "count": 100,
-          "price": "1000",
-          "type": "electronic"
-        }
-      ],
+      "basket": [],
       "bought": [
         {
           "product": [
@@ -203,9 +193,68 @@
             }
           ],
           "date": "2024-03-16T01:25:11.206Z"
+        },
+        {
+          "product": [
+            {
+              "id": "222",
+              "title": "Banana",
+              "description": "This is banana from africa",
+              "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+              "count": 100,
+              "price": "1000",
+              "type": "electronic"
+            }
+          ],
+          "date": "2024-03-16T08:11:24.884Z"
+        },
+        {
+          "product": [
+            {
+              "id": "333",
+              "title": "Ananas",
+              "description": "This is anans",
+              "productImage": "https://heladeriadulcepaladar.es/wp-content/uploads/2023/08/zoomos-ananas.jpeg",
+              "count": 50,
+              "price": "40",
+              "type": "fruits"
+            }
+          ],
+          "date": "2024-03-16T08:52:22.048Z"
+        },
+        {
+          "product": [
+            {
+              "id": "222",
+              "title": "Banana",
+              "description": "This is banana from africa",
+              "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+              "count": 200,
+              "price": 2000,
+              "type": "electronic"
+            },
+            {
+              "id": "111",
+              "title": "Apple",
+              "description": "This is apple",
+              "productImage": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg",
+              "count": 10,
+              "price": "100",
+              "type": "fruits"
+            },
+            {
+              "id": "45a7",
+              "title": "iPhone 14 128GB (Yellow)",
+              "description": " The iPhone 14 display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 6.06 inches diagonally (actual viewable area is less).",
+              "price": "400",
+              "count": "1",
+              "type": "electronic",
+              "productImage": "https://static1.pocketlintimages.com/wordpress/wp-content/uploads/wm/2023/03/iphone-14-yellow-1.jpg"
+            }
+          ],
+          "date": "2024-03-16T12:55:53.318Z"
         }
-      ],
-      "date": "15"
+      ]
     },
     {
       "id": "e0cf",
@@ -227,6 +276,15 @@
           "price": "1000"
         }
       ]
+    },
+    {
+      "id": "a424",
+      "name": "",
+      "email": "b@b",
+      "password": "b",
+      "firstName": "Artur",
+      "lastName": "Miqaelyan",
+      "phoneNumber": "+374888888"
     }
   ],
   "products": [
@@ -235,7 +293,7 @@
       "title": "Apple",
       "description": "This is apple",
       "productImage": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg",
-      "count": 10,
+      "count": "10",
       "price": "100",
       "type": "fruits"
     },
@@ -244,18 +302,45 @@
       "title": "Banana",
       "description": "This is banana from africa",
       "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
-      "count": 100,
+      "count": "100",
       "price": "1000",
-      "type": "electronic"
+      "type": "fruits"
     },
     {
       "id": "333",
       "title": "Ananas",
       "description": "This is anans",
-      "productImage": "https://heladeriadulcepaladar.es/wp-content/uploads/2023/08/zoomos-ananas.jpeg",
-      "count": 50,
+      "productImage": "https://i0.wp.com/tropicalplantae.com/wp-content/uploads/2022/09/C2402AD8-DE3B-4194-8571-6355D4BB2D3D-e1693162562893.webp?fit=600%2C600&ssl=1",
+      "count": "50",
       "price": "40",
       "type": "fruits"
+    },
+    {
+      "id": "45a7",
+      "title": "iPhone 14 128GB (Yellow)",
+      "description": " The iPhone 14 display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 6.06 inches diagonally (actual viewable area is less).",
+      "price": "400",
+      "count": "1",
+      "type": "electronic",
+      "productImage": "https://static1.pocketlintimages.com/wordpress/wp-content/uploads/wm/2023/03/iphone-14-yellow-1.jpg"
+    },
+    {
+      "id": "0dab",
+      "title": "Lion",
+      "description": "this is Lion",
+      "price": "10000",
+      "count": "1",
+      "type": "animal",
+      "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqk_FU8RVNvrgVzeQDpbS1PE-KRA8nKbTAiQ&usqp=CAU"
+    },
+    {
+      "id": "ceb5",
+      "title": "yjgy",
+      "description": "yjgyj",
+      "price": "100",
+      "count": "1",
+      "type": "15611",
+      "productImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAIVBMVEXt7e3V1dXu7u7b29vk5OTY2Njg4ODS0tLq6urn5+fx8fGhN1J1AAACc0lEQVR4nO2a27KDIAxFKYhg//+Dj3dFxUZIcjrTvZ7aaQeWAcJFjAEAAAAAAAAAAAAAAAAAQB3WmsiBsYxOsfWvB4Srz/0H7yKblW2eGN3Tckl14XNldCueWEVGpZ6Gw8q2bD5jxD2D0xwo1w8cW4mZHq+rd7LdWFKsL6kvy43tx1DQKOVYuuc4jANDV5+l3gxOvVTglPJMkYIUsSxIUcv6bSlLr0NNKjb0ZK8lFftZ9uukhtmMvHBTkuoezfs6UtO0T14iqUjZZaFMrEcnUuseh9aAKlLbLseTspWK1G4zSNoOKEgl20FPSaEakUp2KpQFs7zUYesVus91yUsd96iEBhSXsu1xM5824NVwFJfqXkfSBmzdOXdJS11t5v3+5756bSkbr05i1uqm+cdpS7kLp3Vzb6dsEY5HZMJS5x419fX5Z5d+1ZHKBGqZbbr0q46UzZ/tDf/bZbBDWaKRygVq7Oq7gRnSUElK5Q9mx/yZhDFJ86JS2fPrQSEmv7bp04hJ3QfqMAaStCAoFbOB8u/lNHInui9LTOrmtDi0sTsZ72ZEQamsU/r+Yw2fgtTzY/UtLYhJ5XtUjm31JyWVnWBuWI+WhaSulywfWNOClFRBoLaFsozUKQsRmfu6kFRRoNZdvYhUaaCWUMlIFQZqSQsyzfeVUtH5Epyf3vFJpYTC16NGrk9Vl/UDUlyva4dJik2K/lbhtiy35aw6prVKW30BoGda3BNO14iP9/KumnklxnKboGS1koejn5urM7saTudD/28VuJyGEVg86aVKnuFKyWZlYsNA5LtoNntV3wrivJAHAAAAAAAAAAAAAAAAAKjwB5/cHayqWx0sAAAAAElFTkSuQmCC"
     }
   ]
 }

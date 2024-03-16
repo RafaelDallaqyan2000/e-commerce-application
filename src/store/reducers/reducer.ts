@@ -7,6 +7,7 @@ import {getAllProducts} from "./actions/getAllProducts";
 import {addInBasket} from "./actions/addInBasket";
 import {deleteBasketProduct} from "./actions/deleteBasketProduct";
 import {toByProducts} from "./actions/toByProduct.ts";
+import {addNewProduct} from "./actions/addNewProduct.ts";
 
 export interface SignInState {
     token: boolean | string,
@@ -119,13 +120,20 @@ export const slice = createSlice({
         })
 
         builder.addCase(toByProducts.fulfilled, (state:any, action) => {
-
             state.userData.bought = action.payload.bought;
             state.userData.basket = [];
             state.error = '';
         })
 
         builder.addCase(toByProducts.rejected, (state:any, action) => {
+            state.error = action.error.message ?? '';
+        })
+
+        builder.addCase(addNewProduct.fulfilled, (state:any, action) => {
+            state.error = '';
+        })
+
+        builder.addCase(addNewProduct.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
     }

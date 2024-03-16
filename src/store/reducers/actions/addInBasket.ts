@@ -3,22 +3,21 @@ import axios from "axios";
 import {store} from "../../store";
 import {getUserAllData} from "./getUserAllData";
 
-type SignUpType = {
-    email: string;
-    password: string;
+type BasketType = {
     name: string;
-    id?: number | string;
-    count?: string;
+    id: number | string;
+    count: string;
+    price: string;
 }
 
 
 export const addInBasket = createAsyncThunk('basked',
-    (basketItem: SignUpType) : any => {
+    (basketItem: BasketType) : any => {
 
         const userData = store.getState().userData;
         const userId = localStorage.getItem("userId");
 
-        const filteredBaskedProducts = userData.basket.map(e => {
+        const filteredBaskedProducts = userData.basket.map((e: BasketType) => {
             if(e.id === basketItem.id) {
                 return {
                     ...e,
@@ -29,7 +28,7 @@ export const addInBasket = createAsyncThunk('basked',
             return e
         });
 
-        const findAddedBasket = userData.basket.find(e =>  e.id == basketItem.id);
+        const findAddedBasket = userData.basket.find((e:BasketType) =>  e.id == basketItem.id);
 
         let data;
 
