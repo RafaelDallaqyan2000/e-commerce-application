@@ -6,3 +6,4 @@ export {getAllProducts} from "./actions/getAllProducts";
 export {getUserAllData} from "./actions/getUserAllData";
 export {login} from "./actions/login";
 export {registerUser} from "./actions/registerUser";
+export {toByProducts} from "./actions/toByProduct.ts";

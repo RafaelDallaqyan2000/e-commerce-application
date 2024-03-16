@@ -1,6 +1,6 @@
 import "./productsStyle.css";
 import React, {useEffect} from "react";
-import {ProductItem, SearchForProducts, SortProducts} from "../../components";
+import {FilterProducts, ProductItem, SearchForProducts, SortProducts} from "../../components";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store";
 import {getAllProducts} from "../../store";
@@ -21,6 +21,7 @@ export function ProductList() {
             <div className="findProductContainer">
                 <SearchForProducts />
                 <SortProducts />
+                <FilterProducts />
             </div>
             <div className="allProductsContainer">
                 {

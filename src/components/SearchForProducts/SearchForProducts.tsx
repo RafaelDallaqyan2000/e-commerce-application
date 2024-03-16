@@ -1,8 +1,7 @@
 import "./searchStyles.css";
-import React, {useCallback, useEffect, useMemo, useState} from "react";
-import {store, useAppDispatch} from "../../store/store.ts";
+import React, {useCallback, useState} from "react";
+import {useAppDispatch} from "../../store/store.ts";
 import {useSelector} from "react-redux";
-import {all} from "axios";
 import {searchProducts} from "../../helpers";
 import {handleFormChange} from "../../store";
 

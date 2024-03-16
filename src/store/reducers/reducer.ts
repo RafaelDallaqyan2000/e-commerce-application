@@ -6,6 +6,7 @@ import {editUserInfo} from "./actions/editUserInfo";
 import {getAllProducts} from "./actions/getAllProducts";
 import {addInBasket} from "./actions/addInBasket";
 import {deleteBasketProduct} from "./actions/deleteBasketProduct";
+import {toByProducts} from "./actions/toByProduct.ts";
 
 export interface SignInState {
     token: boolean | string,
@@ -13,8 +14,9 @@ export interface SignInState {
     error: string | boolean,
     isLogin: boolean,
     userData: any,
-    allProducts: any[]
-    defaultProducts: any[]
+    allProducts: any[],
+    defaultProducts: any[],
+    bought: any[]
 }
 
 const initialState: SignInState = {
@@ -24,7 +26,8 @@ const initialState: SignInState = {
     isLogin: false,
     userData: {},
     allProducts: [],
-    defaultProducts: []
+    defaultProducts: [],
+    bought: [],
 }
 
 export const slice = createSlice({
@@ -40,7 +43,7 @@ export const slice = createSlice({
             }
             window.location.reload();
         },
-        handleFormChange: (state, action: { payload: { key: string; value: any } }) => {
+        handleFormChange: (state:any, action: { payload: { key: string; value: any } }) => {
             const {key, value} = action.payload;
             state[key] = value;
         },
@@ -112,6 +115,17 @@ export const slice = createSlice({
         })
 
         builder.addCase(deleteBasketProduct.rejected, (state:any, action) => {
+            state.error = action.error.message ?? '';
+        })
+
+        builder.addCase(toByProducts.fulfilled, (state:any, action) => {
+
+            state.userData.bought = action.payload.bought;
+            state.userData.basket = [];
+            state.error = '';
+        })
+
+        builder.addCase(toByProducts.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
     }

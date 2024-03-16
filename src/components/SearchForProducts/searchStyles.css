@@ -1,6 +1,5 @@
 .searchBarContainer {
     height: 100px;
-    padding: 30px;
     display: flex;
     align-items: center;
 }
@@ -14,4 +13,15 @@
     border: 2px solid royalblue;
     border-radius: 5px;
     width: 300px;
+}
+
+@media screen and (max-width: 410px){
+
+    .searchBarContainer h2 {
+        display: none;
+    }
+
+    .searchBarContainer input {
+        width: 300px;
+    }
 }

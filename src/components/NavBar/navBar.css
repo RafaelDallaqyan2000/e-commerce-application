@@ -17,7 +17,7 @@ nav {
 .logo a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -42,7 +42,7 @@ nav {
 .nav-links li a {
     color: #bababa;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 

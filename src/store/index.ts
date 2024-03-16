@@ -8,5 +8,6 @@ export {
     getAllProducts,
     editUserInfo,
     deleteBasketProduct,
-    addInBasket
+    addInBasket,
+    toByProducts
 } from "./reducers";
