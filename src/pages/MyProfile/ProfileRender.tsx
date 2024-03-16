@@ -4,7 +4,7 @@ import {UserType} from "../../models/models";
 import defaultProfileImage from "../../images/profileImage.jpg";
 
 type ProfileType = {
-    userData: UserType;
+    userData: UserType & {password: string};
     handleChangeUserData: (e: any) => any;
     handleSubmit: (e: any) => any;
 }
@@ -24,7 +24,8 @@ export function ProfileRender({
         lastName,
         phoneNumber,
         email,
-        imageUrl
+        imageUrl,
+        password
     } = userData;
 
 
@@ -100,6 +101,16 @@ export function ProfileRender({
                             value={phoneNumber}
                             onChange={handleChangeUserData}
                             maxLength={10}
+                            required
+                        />
+
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={password}
+                            onChange={handleChangeUserData}
                             required
                         />
 

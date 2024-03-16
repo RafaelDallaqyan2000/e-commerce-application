@@ -19,7 +19,6 @@
 
 .profileContainer .profile-image {
     display: block;
-    margin: 0 auto;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -27,11 +26,21 @@
     margin-bottom: 20px;
 }
 
+.profileContainer .defaultImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profileContainer label {
     font-weight: bold;
 }
 
-.profileContainer input[type="text"] {
+.profileContainer :where(input[type="text"], input[type="password"]) {
     width: 100%;
     padding: 8px;
     margin-top: 4px;
@@ -52,4 +61,10 @@
 
 .profileContainer input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+.defaultImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

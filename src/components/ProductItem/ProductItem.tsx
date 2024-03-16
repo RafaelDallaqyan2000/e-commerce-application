@@ -10,7 +10,7 @@ type ProductItemType = {
 }
 
 export function ProductItem({productDetails}: ProductItemType) {
-    const {price, title, productImage, id} = productDetails;
+    const {price, title, productImage, id} : any = productDetails;
 
     const navigate = useNavigate();
     const dispatch = useAppDispatch();

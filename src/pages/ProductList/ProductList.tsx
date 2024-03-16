@@ -1,6 +1,11 @@
 import "./productsStyle.css";
 import React, {useEffect} from "react";
-import {FilterProducts, ProductItem, SearchForProducts, SortProducts} from "../../components";
+import {
+    FilterProducts,
+    ProductItem,
+    SearchForProducts,
+    SortProducts
+} from "../../components";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store";
 import {getAllProducts} from "../../store";
@@ -13,7 +18,7 @@ export function ProductList() {
         dispatch(getAllProducts());
     }, []);
 
-    const productList = useSelector(state => state.allProducts);
+    const productList = useSelector((state: any) => state.allProducts);
 
     return (
         <div>
@@ -25,7 +30,7 @@ export function ProductList() {
             </div>
             <div className="allProductsContainer">
                 {
-                    productList.map(product => (
+                    productList.map((product: any) => (
                         <ProductItem key={product.id} productDetails={product} />
                     ))
                 }

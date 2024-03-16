@@ -8,7 +8,17 @@
       "password": "a",
       "phoneNumber": "+374999999",
       "imageUrl": "https://i0.wp.com/folkextreme.ru/wp-content/uploads/2014/04/jason-statham-interview-2.jpg",
-      "basket": [],
+      "basket": [
+        {
+          "id": "222",
+          "title": "Banana",
+          "description": "This is banana from africa",
+          "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+          "count": 100,
+          "price": "1000",
+          "type": "electronic"
+        }
+      ],
       "bought": [
         {
           "product": [
@@ -110,6 +120,89 @@
             }
           ],
           "date": "2024-03-16T00:37:10.442Z"
+        },
+        {
+          "product": [
+            {
+              "id": "222",
+              "title": "Banana",
+              "description": "This is banana from africa",
+              "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+              "count": 100,
+              "price": "1000",
+              "type": "electronic"
+            },
+            {
+              "id": "333",
+              "title": "Ananas",
+              "description": "This is anans",
+              "productImage": "https://heladeriadulcepaladar.es/wp-content/uploads/2023/08/zoomos-ananas.jpeg",
+              "count": 50,
+              "price": "40",
+              "type": "fruits"
+            }
+          ],
+          "date": "2024-03-16T01:03:40.439Z"
+        },
+        {
+          "product": [
+            {
+              "id": "222",
+              "title": "Banana",
+              "description": "This is banana from africa",
+              "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+              "count": 100,
+              "price": "1000",
+              "type": "electronic"
+            }
+          ],
+          "date": "2024-03-16T01:03:56.915Z"
+        },
+        {
+          "product": [
+            {
+              "id": "111",
+              "title": "Apple",
+              "description": "This is apple",
+              "productImage": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg",
+              "count": 10,
+              "price": "100",
+              "type": "fruits"
+            }
+          ],
+          "date": "2024-03-16T01:04:18.676Z"
+        },
+        {
+          "product": [
+            {
+              "id": "333",
+              "title": "Ananas",
+              "description": "This is anans",
+              "productImage": "https://heladeriadulcepaladar.es/wp-content/uploads/2023/08/zoomos-ananas.jpeg",
+              "count": 50,
+              "price": "40",
+              "type": "fruits"
+            },
+            {
+              "id": "222",
+              "title": "Banana",
+              "description": "This is banana from africa",
+              "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+              "count": 100,
+              "price": "1000",
+              "type": "electronic"
+            },
+            {
+              "id": "111",
+              "title": "Apple",
+              "description": "This is apple",
+              "productImage": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/Do_Apples_Affect_Diabetes_and_Blood_Sugar_Levels-732x549-thumbnail-1-732x549.jpg",
+              "count": 10,
+              "price": "100",
+              "type": "fruits"
+            }
+          ],
+          "date": "2024-03-16T01:25:11.206Z"
         }
       ],
       "date": "15"

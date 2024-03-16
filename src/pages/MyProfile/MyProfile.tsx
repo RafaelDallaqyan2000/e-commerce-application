@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {ProfileRender} from "./ProfileRender";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store";
-import {editUserInfo} from "../../store/reducers/actions/editUserInfo";
+import {editUserInfo} from "../../store";
 
 export function MyProfile() {
     const defaultData = useSelector(state => state.userData);
@@ -15,6 +15,12 @@ export function MyProfile() {
 
     const handleChangeInformation = (e) => {
 
+        if(e.target.name === "password") {
+            localStorage.setItem("userPassword", e.target.value);
+        }
+        if(e.target.name === "email") {
+            localStorage.setItem("userMail", e.target.value)
+        }
         setUserInfo(prevState => {
             return {
                 ...prevState,
@@ -23,7 +29,7 @@ export function MyProfile() {
         })
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: any) => {
         e.stopPropagation();
         e.preventDefault();
         dispatch(editUserInfo(userInfo));

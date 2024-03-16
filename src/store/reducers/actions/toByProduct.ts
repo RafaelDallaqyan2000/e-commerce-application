@@ -2,14 +2,6 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {store} from "../../store";
 
-type SignUpType = {
-    email: string;
-    password: string;
-    name: string;
-    id?: number | string;
-    count?: string;
-}
-
 
 export const toByProducts = createAsyncThunk('bought/buy',
     () : any => {

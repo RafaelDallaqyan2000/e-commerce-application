@@ -24,7 +24,7 @@ export function ShoppingCart() {
                                 <ShoppingCartItem key={e.id} item={e} />
                             ))
                         }
-                        <button onClick={handleBuyClick}>Buy</button>
+                        <button className="buyButton" onClick={handleBuyClick}>Buy</button>
                     </div>
                 ) : (
                     <h2

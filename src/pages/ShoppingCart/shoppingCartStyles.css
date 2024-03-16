@@ -4,3 +4,11 @@
     margin: 30px;
     gap: 20px;
 }
+
+.buyButton {
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    font-size: 25px;
+    background: lightseagreen;
+}
