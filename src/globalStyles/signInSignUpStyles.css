@@ -23,6 +23,10 @@ body {
     margin-bottom: 20px;
 }
 
+.profileForm button{
+    width: 100%;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
@@ -65,4 +69,15 @@ input[type="password"] {
 
 .ifHaveDontHaveAccount a:hover {
     color: #0056b3;
+}
+
+.pageTitle {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #2980B9;
+    border-bottom-right-radius: 55px;
+    border-bottom-left-radius: 55px;
+    text-decoration: underline;
 }

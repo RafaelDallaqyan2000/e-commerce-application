@@ -7,17 +7,17 @@ export type UserType = {
     phoneNumber: string;
 }
 
-export type ItemType = {
+export type ProductItemType = {
     id: string;
     title: string;
-    description: string;
-    imageUrl: string;
-    count: number;
+    description?: string;
+    productImage: string;
+    count?: number;
     price: number;
 }
 
 export type OrderType = {
     id: string;
     date: string;
-    items: ItemType[];
+    items: ProductItemType[];
 }

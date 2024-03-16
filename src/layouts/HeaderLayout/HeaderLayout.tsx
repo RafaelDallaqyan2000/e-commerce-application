@@ -1,10 +1,11 @@
 import React from "react";
 import {NavBar} from "../../components/NavBar";
 
-export function HeaderLayout ({Component}) {
+export function HeaderLayout({Component}) {
+
     return (
         <div>
-            <NavBar />
+            <NavBar/>
             <div className="headerLayout">
                 <Component />
             </div>

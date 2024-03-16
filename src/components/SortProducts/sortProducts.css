@@ -1,0 +1,12 @@
+.sortContainer {
+    display: flex;
+    align-items: center;
+}
+
+.sortContainer .sortArrows {
+    font-size: 22px;
+}
+
+.sortContainer button {
+    min-width: 50px;
+}

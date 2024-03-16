@@ -1,0 +1,35 @@
+.filterContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #FFF;
+}
+
+.filterContainer > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.filterContainer .filterButton {
+    padding: 10px;
+    font-size: 22px;
+}
+
+.filterContainer :where(input, select) {
+    padding: 10px 5px;
+    font-size: 18px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.filterContainer select {
+    cursor: pointer;
+}
