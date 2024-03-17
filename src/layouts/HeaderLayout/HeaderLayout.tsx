@@ -1,7 +1,7 @@
-import React from "react";
-import {NavBar} from "../../components/NavBar";
+import React, {ElementType} from "react";
+import {NavBar} from "../../components";
 
-export function HeaderLayout({Component}) {
+export function HeaderLayout({Component}: {Component: ElementType}) {
 
     return (
         <div>

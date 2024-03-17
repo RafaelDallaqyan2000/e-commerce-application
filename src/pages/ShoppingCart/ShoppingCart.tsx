@@ -1,17 +1,28 @@
 import "./shoppingCartStyles.css";
-import React from "react";
+import React, {useEffect} from "react";
 import {ShoppingCartItem} from "../../components";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store.ts";
-import {toByProducts} from "../../store";
+import {deleteBasketProduct, toByProducts} from "../../store";
+import {getAllBaskets} from "../../store/reducers";
 
 export function ShoppingCart() {
-    const basketProducts = useSelector((state: any) => state.userData.basket)
+    const basketProducts = useSelector((state: any) => state.basket)
     const dispatch = useAppDispatch();
 
+    useEffect(() => {
+        dispatch(getAllBaskets());
+    }, []);
+
     const handleBuyClick = () => {
-        dispatch(toByProducts())
-    }
+        dispatch(toByProducts()).then((e) => {
+            console.log(e.payload)
+            // e.payload.products.map(e => {
+            // dispatch(deleteBasketProduct(e.id));
+            //
+            // })
+        })
+    };
 
     return (
         <>

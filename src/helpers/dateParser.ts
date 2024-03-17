@@ -14,7 +14,5 @@ export function dateParser(utcDate = '2024-03-16T01:04:18.676Z') {
 
     const formattedDate = date.toLocaleString('en-US', options);
 
-
-    console.log(formattedDate);
     return `${formattedDate}`;
 }

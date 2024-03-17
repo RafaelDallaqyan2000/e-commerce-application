@@ -4,50 +4,49 @@ import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store.ts";
 import {handleFormChange} from "../../store";
 import {clearDuplication} from "../../helpers";
+import { ProductItemType } from "../../models/models.ts";
 
 export function FilterProducts() {
 
-    const allProducts = useSelector((state: any) => state.defaultProducts) ?? [];
+    const allProductsFixed = useSelector((state: any) => state.defaultProducts) ?? [];
     const dispatch = useAppDispatch();
     const [filterType, setFilterType] = useState('');
-    const [filterPrice, setFilterPrice] = useState('');
+    const [minPrice, setMinPrice] = useState('');
+    const [maxPrice, setMaxPrice] = useState('');
 
+    useEffect(() => {
+        applyFilters();
+      }, [minPrice, maxPrice, filterType]); 
+
+    const handleFilterTypeChange = (e: any) => setFilterType(e.target.value);
+  
+    const handleMinChange = (e: any) => {
+      setMinPrice(e.target.value);
+    };
+  
+    const handleMaxChange = (e: any) => {
+      setMaxPrice(e.target.value);
+    };
+      
     const applyFilters = () => {
-        let filtered = allProducts;
-
-        if (filterType) {
-            filtered = filtered.filter(product => product.type === filterType);
-        }
-
-        if (filterPrice) {
-            filtered = filtered.filter(product => product.price <= parseInt(filterPrice));
-        }
-
+        let filtered = allProductsFixed.filter((item: ProductItemType) => {
+            const value = item.price;
+            const type = item.type;
+      
+            const typePass = !filterType || type === filterType;
+      
+            const pricePass = (!minPrice || value >= parseInt(minPrice)) && (!maxPrice || value <= parseInt(maxPrice));
+          
+            return  pricePass && typePass;
+          });
+      
         dispatch(handleFormChange({
             key: "allProducts",
             value: filtered
-        }));
+        }))
     };
 
-    const handleFilterTypeChange = (e) => {
-        setFilterType(e.target.value);
-    };
-
-    const handleFilterPriceChange = (e) => {
-        setFilterPrice(e.target.value);
-    };
-
-    const handleFilterApply = () => {
-        applyFilters();
-    };
-
-    useEffect(() => {
-        let a = allProducts.filter((e, i, o) => {
-            console.log(o, i);
-            return e;
-        })
-    }, [allProducts])
-
+    
     return (
         <div className="filterContainer">
                 <div>
@@ -65,7 +64,7 @@ export function FilterProducts() {
                             All
                         </option>
                         {
-                            clearDuplication(allProducts).map((type: any, i: number) => {
+                            clearDuplication(allProductsFixed).map((type: any, i: number) => {
                                return (
                                    <option
                                         key={type + i}
@@ -79,26 +78,33 @@ export function FilterProducts() {
                     </select>
                 </div>
                 <div>
+                <label
+                        htmlFor="priceFilterMin"
+                        className="filterByPrice"
+                    >
+                        Filter by Price (min):
+                    </label>
+                    <input
+                        type="number"
+                        id="priceFilterMin"
+                        value={minPrice}
+                        onChange={handleMinChange}
+                        placeholder="Enter max price"
+                    />
                     <label
-                        htmlFor="priceFilter"
+                        htmlFor="priceFilterMax"
                         className="filterByPrice"
                     >
                         Filter by Price (max):
                     </label>
                     <input
                         type="number"
-                        id="priceFilter"
-                        value={filterPrice}
-                        onChange={handleFilterPriceChange}
+                        id="priceFilterMax"
+                        value={maxPrice}
+                        onChange={handleMaxChange}
                         placeholder="Enter max price"
                     />
                 </div>
-                <button
-                    className="filterButton"
-                    onClick={handleFilterApply}
-                >
-                    Apply Filters
-                </button>
         </div>
     )
 }

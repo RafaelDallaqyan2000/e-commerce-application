@@ -2,12 +2,17 @@ import React, {useEffect, useState} from "react";
 import {ProfileRender} from "./ProfileRender";
 import {useSelector} from "react-redux";
 import {useAppDispatch} from "../../store/store";
-import {editUserInfo} from "../../store";
+import {editUserInfo, getUserAllData} from "../../store";
 
 export function MyProfile() {
     const defaultData = useSelector((state: any) => state.userData);
     const [userInfo, setUserInfo] = useState<any>();
     const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(getUserAllData());
+    }, []);
+
 
     useEffect(() => {
         setUserInfo(defaultData);

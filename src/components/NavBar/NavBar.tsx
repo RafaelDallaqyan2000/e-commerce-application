@@ -1,26 +1,17 @@
 import "./navBar.css";
-import React, {useEffect} from "react";
-import {Link, NavLink, useLocation} from "react-router-dom";
-import {useAppDispatch} from "../../store/store";
+import React from "react";
+import {Link, NavLink} from "react-router-dom";
+import {useAppDispatch} from "../../store/store.ts";
 import {editToken} from "../../store";
-import {getUserAllData} from "../../store/reducers/actions/getUserAllData";
+
 
 export function NavBar() {
 
     const dispatch = useAppDispatch()
-    const location = useLocation();
 
     const handleLogOutClick = () => {
         dispatch(editToken({token: 'remove'}))
     }
-
-    useEffect(() => {
-        if(localStorage.getItem('token') === 'true') {
-            dispatch(getUserAllData())
-        }
-    }, [location.pathname]);
-
-
     return (
         <nav>
             <div className="logo">

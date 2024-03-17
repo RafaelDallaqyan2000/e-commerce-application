@@ -13,7 +13,7 @@ import {
 import {Redirect} from "./Redirect";
 import {HeaderLayout} from "./layouts/HeaderLayout";
 
-export function ProjectRoutes({isLogin}) {
+export function ProjectRoutes({isLogin}: { isLogin: boolean }) {
 
     return (
         isLogin ? (
