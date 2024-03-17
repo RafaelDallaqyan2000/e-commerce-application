@@ -8,8 +8,9 @@ import {addInBasket} from "./actions/addInBasket";
 import {deleteBasketProduct} from "./actions/deleteBasketProduct";
 import {toByProducts} from "./actions/toByProduct.ts";
 import {addNewProduct} from "./actions/addNewProduct.ts";
-import {getAllBaskets} from "./actions/getAllBasket.ts";
+import {getAllBaskets, getBasketByProductId} from "./actions/getAllBasket.ts";
 import {getAllBought} from "./actions/getAllBought.ts";
+import { log } from "console";
 
 export interface SignInState {
     token: boolean | string,
@@ -55,21 +56,12 @@ export const slice = createSlice({
     },
     extraReducers: (builder) => {
 
-
         builder.addCase(login.fulfilled, (state:any) => {
             state.error = '';
         })
 
         builder.addCase(login.rejected, (state:any, action) => {
             state.loading = false;
-            state.error = action.error.message ?? '';
-        })
-
-        builder.addCase(registerUser.fulfilled, (state:any) => {
-            state.error = '';
-        })
-
-        builder.addCase(registerUser.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
 
@@ -88,14 +80,6 @@ export const slice = createSlice({
             state.loading = false;
         })
 
-        builder.addCase(editUserInfo.fulfilled, (state:any, action) => {
-            state.error = '';
-        })
-
-        builder.addCase(editUserInfo.rejected, (state:any, action) => {
-            state.error = action.error.message ?? '';
-        })
-
         builder.addCase(getAllProducts.fulfilled, (state:any, action) => {
             state.allProducts = action.payload;
             state.defaultProducts = action.payload;
@@ -103,14 +87,6 @@ export const slice = createSlice({
         })
 
         builder.addCase(getAllProducts.rejected, (state:any, action) => {
-            state.error = action.error.message ?? '';
-        })
-
-        builder.addCase(addInBasket.fulfilled, (state:any, action) => {
-            state.error = '';
-        })
-
-        builder.addCase(addInBasket.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
 
@@ -127,19 +103,10 @@ export const slice = createSlice({
 
         builder.addCase(toByProducts.fulfilled, (state:any, action) => {
             state.bought = action.payload.bought;
-            // state.basket = [];
             state.error = '';
         })
 
         builder.addCase(toByProducts.rejected, (state:any, action) => {
-            state.error = action.error.message ?? '';
-        })
-
-        builder.addCase(addNewProduct.fulfilled, (state:any, action) => {
-            state.error = '';
-        })
-
-        builder.addCase(addNewProduct.rejected, (state:any, action) => {
             state.error = action.error.message ?? '';
         })
 
@@ -162,7 +129,6 @@ export const slice = createSlice({
         })
     }
 })
-
 
 export const {editToken, handleFormChange} = slice.actions;
 export default slice.reducer;

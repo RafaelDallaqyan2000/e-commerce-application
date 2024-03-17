@@ -1,5 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
+import { log } from "console";
 
 type BasketType = {
     name: string;
@@ -10,13 +11,13 @@ type BasketType = {
 
 
 export const addInBasket = createAsyncThunk('basked',
-    (basketItem: BasketType) : any => {
+    ({ id : productId, ...rest }: BasketType) : any => {
 
-        const userId = localStorage.getItem("userId");
+        const userId = localStorage.getItem("userId");        
 
-        let data = {...basketItem, userId}
+        let data = {...rest, userId, productId}
 
-        return axios.post(`http://localhost:8080/basket`, data, {params: {userId}})
+        return axios.post(`http://localhost:8080/basket`, data)
             .then(res => {
                 alert('Product added');
                 return res.data;
