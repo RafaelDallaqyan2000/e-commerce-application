@@ -5,7 +5,7 @@ import {useAppDispatch} from "../../store/store";
 import {editUserInfo} from "../../store";
 
 export function MyProfile() {
-    const defaultData = useSelector(state => state.userData);
+    const defaultData = useSelector((state: any) => state.userData);
     const [userInfo, setUserInfo] = useState<any>();
     const dispatch = useAppDispatch();
 
@@ -13,7 +13,7 @@ export function MyProfile() {
         setUserInfo(defaultData);
     }, [defaultData])
 
-    const handleChangeInformation = (e) => {
+    const handleChangeInformation = (e: any) => {
 
         if(e.target.name === "password") {
             localStorage.setItem("userPassword", e.target.value);
@@ -21,7 +21,7 @@ export function MyProfile() {
         if(e.target.name === "email") {
             localStorage.setItem("userMail", e.target.value)
         }
-        setUserInfo(prevState => {
+        setUserInfo((prevState: any) => {
             return {
                 ...prevState,
                 [e.target.name]: e.target.value
