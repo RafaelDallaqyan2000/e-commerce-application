@@ -8,7 +8,7 @@ import { ProductItemType } from "../../models/models.ts";
 
 export function FilterProducts() {
 
-    const allProductsFixed = useSelector((state: any) => state.defaultProducts) ?? [];
+    const allProductsFixed = useSelector((state: any) => state.defaultProducts);
     const dispatch = useAppDispatch();
     const [filterType, setFilterType] = useState('');
     const [minPrice, setMinPrice] = useState('');
@@ -49,62 +49,60 @@ export function FilterProducts() {
     
     return (
         <div className="filterContainer">
-                <div>
-                    <label
-                        htmlFor="typeFilter"
-                        className="filterByType"
-                    >
-                        Filter by Type:
-                    </label>
-                    <select
-                        id="typeFilter"
-                        value={filterType}
-                        onChange={handleFilterTypeChange}>
-                        <option value="">
-                            All
-                        </option>
-                        {
-                            clearDuplication(allProductsFixed).map((type: any, i: number) => {
-                               return (
-                                   <option
-                                        key={type + i}
-                                        value={type}
-                                    >
-                                        {type}
-                                    </option>
-                               )
-                            })
-                        }
-                    </select>
-                </div>
-                <div>
+            <div>
                 <label
-                        htmlFor="priceFilterMin"
-                        className="filterByPrice"
-                    >
-                        Filter by Price (min):
-                    </label>
-                    <input
-                        type="number"
-                        id="priceFilterMin"
-                        value={minPrice}
-                        onChange={handleMinChange}
-                        placeholder="Enter max price"
-                    />
-                    <label
-                        htmlFor="priceFilterMax"
-                        className="filterByPrice"
-                    >
-                        Filter by Price (max):
-                    </label>
-                    <input
-                        type="number"
-                        id="priceFilterMax"
-                        value={maxPrice}
-                        onChange={handleMaxChange}
-                        placeholder="Enter max price"
-                    />
-                </div>
+                    htmlFor="typeFilter"
+                    className="filterByType"
+                >
+                    Filter by Type:
+                </label>
+                <select
+                    id="typeFilter"
+                    value={filterType}
+                    onChange={handleFilterTypeChange}
+                >
+                    <option value="">
+                        All
+                    </option>
+                    {
+                        clearDuplication(allProductsFixed).map((type: any, i: number) => {
+                            return (
+                                <option
+                                    key={type + i}
+                                    value={type}
+                                >
+                                    {type}
+                                </option>
+                            )
+                        })
+                    }
+                </select>
+            </div>
+            <div>
+                <label htmlFor="priceFilterMin" className="filterByPrice">
+                    Filter by Price (min) $:
+                </label>
+                <input
+                    type="number"
+                    id="priceFilterMin"
+                    value={minPrice}
+                    onChange={handleMinChange}
+                    placeholder="Enter max price"
+                />
+                <label
+                    htmlFor="priceFilterMax"
+                    className="filterByPrice"
+                >
+                    Filter by Price (max) $:
+                </label>
+                <input
+                    type="number"
+                    id="priceFilterMax"
+                    value={maxPrice}
+                    onChange={handleMaxChange}
+                    placeholder="Enter max price"
+                />
+            </div>
         </div>
     )
 }

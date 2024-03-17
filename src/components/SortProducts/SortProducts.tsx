@@ -22,6 +22,7 @@ export function SortProducts() {
             value: sortProducts(defaultProducts, reducePrice)
         }))
     }, [reducePrice]);
+    
     const handleSortClick = () => {
 
         if(reducePrice === "reduce") {

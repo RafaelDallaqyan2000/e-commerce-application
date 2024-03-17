@@ -1392,6 +1392,16 @@
       "price": "40",
       "type": "fruits",
       "userId": "1e5we"
+    },
+    {
+      "id": "222",
+      "title": "Banana",
+      "description": "This is banana from africa",
+      "productImage": "https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg",
+      "count": "100",
+      "price": "1000",
+      "type": "fruits",
+      "userId": "1e5we"
     }
   ],
   "products": [

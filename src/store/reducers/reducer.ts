@@ -144,31 +144,7 @@ export const slice = createSlice({
         })
 
         builder.addCase(getAllBaskets.fulfilled, (state:any, action) => {
-
-            const findAndIncrementDuplicates = (arr: any, propertyName: any) => {
-                // Create an object to store counts of each property value
-                const counts: any = {};
-
-                console.log('aaaaaaaaaaaa')
-                // Iterate over the array to count occurrences of each property value
-                arr.forEach((obj: any) => {
-                    const propertyValue = obj[propertyName];
-                    counts[propertyValue] = (counts[propertyValue] || 0) + 1;
-                });
-
-                // Create a new array with duplicates incremented
-                const newArray = arr.map(obj => {
-                    const propertyValue = obj[propertyName];
-                    if (counts[propertyValue] > 1) {
-                        counts[propertyValue]--; // Decrease count to prevent incrementing the next occurrence
-                        return { ...obj, [propertyName]: `${propertyValue}${counts[propertyValue]}` };
-                    }
-                    return obj;
-                });
-
-                return newArray;
-            };
-            state.basket = findAndIncrementDuplicates(action.payload, "title")
+            state.basket = action.payload
             state.error = '';
         })
 
