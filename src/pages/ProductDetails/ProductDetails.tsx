@@ -1,20 +1,35 @@
 import "./productDetailsStyle.css";
-import React from "react";
+import React, {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {ProductItemType} from "../../models/models";
+import {useAppDispatch} from "../../store/store.ts";
+import {getAllProducts} from "../../store";
 
 export function ProductDetails() {
     const location = useLocation();
+    const dispatch = useAppDispatch();
 
     const pathSplit = location.pathname.split("/");
     const productId = pathSplit[pathSplit.length - 1];
 
+    useEffect(() => {
+        dispatch(getAllProducts());
+    }, []);
+
     const findProduct: ProductItemType = useSelector(
-        state => state.allProducts.find(e => e.id == productId) //<<<<<<<<<<
+        (state: any) => state.allProducts.find(
+            (e: ProductItemType) => e.id == productId
+        )
     ) ?? {};
 
-    const {productImage, price, title, count, description} = findProduct;
+    const {
+        productImage,
+        price,
+        title,
+        count,
+        description
+    } = findProduct;
 
     return (
         <div>

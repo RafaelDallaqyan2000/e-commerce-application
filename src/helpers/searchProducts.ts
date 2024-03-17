@@ -4,20 +4,18 @@ export function searchProducts(
 ): any[] {
 
     if (!text) {
-        return array
-    }
-
-    if(!array && !array?.length) {
+        return array;
+    } else if (!array) {
         return [];
     }
 
     let filter: any[] = array.filter(product => {
 
-        let splitForDesc = product.description.toLowerCase().split(text.toLowerCase());
+        let splitForDescription = product.description.toLowerCase().split(text.toLowerCase());
         let splitForTitle = product.title.toLowerCase().split(text.toLowerCase());
 
-        if((splitForDesc.length > 1) || (splitForTitle.length > 1)) {
-            return (splitForDesc.length > 1) || (splitForTitle.length > 1)
+        if((splitForDescription.length > 1) || (splitForTitle.length > 1)) {
+            return (splitForDescription.length > 1) || (splitForTitle.length > 1)
         }
     })
 

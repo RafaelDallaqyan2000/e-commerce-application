@@ -16,9 +16,7 @@ export const addNewProduct = createAsyncThunk('newProduct',
 
         return axios.post(`http://localhost:8080/products`, newProductsData)
             .then(res => {
-                // alert('Product added')
-                // console.log(res.data, '<<<<<<<<<<')
-
+                alert('Product added')
                 return res.data;
             })
             .catch(err => {

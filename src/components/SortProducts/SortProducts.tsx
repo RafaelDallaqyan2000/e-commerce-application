@@ -13,7 +13,7 @@ const iconObject: any = {
 export function SortProducts() {
     const [reducePrice, setReducePrice] = useState('default');
 
-    const defaultProducts = useSelector((state: any) => state.defaultProducts);
+    const defaultProducts = useSelector((state: any) => state.allProducts);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -22,6 +22,7 @@ export function SortProducts() {
             value: sortProducts(defaultProducts, reducePrice)
         }))
     }, [reducePrice]);
+    
     const handleSortClick = () => {
 
         if(reducePrice === "reduce") {

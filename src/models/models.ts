@@ -14,6 +14,7 @@ export type ProductItemType = {
     productImage: string;
     count?: number;
     price: number;
+    type?: string
 }
 
 export type OrderType = {

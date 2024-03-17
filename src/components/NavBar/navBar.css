@@ -12,6 +12,8 @@ nav {
     align-items: center;
     padding: 20px;
     font-family: 'Arial', sans-serif;
+    position: sticky;
+    top: 0;
 }
 
 .logo a {
